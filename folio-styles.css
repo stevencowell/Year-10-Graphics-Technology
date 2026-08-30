@@ -1,0 +1,230 @@
+.folio-orientation,
+.folio-dashboard,
+.folio-card {
+  background: #fff;
+  border: 1px solid #e0d3d6;
+  border-radius: 1rem;
+}
+
+.folio-orientation {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  margin-block: 1.5rem;
+}
+
+.boundary-note {
+  margin-top: 1.25rem;
+  padding: 1rem 1.125rem;
+  background: #fbf3f5;
+  border-left: 0.3rem solid #8b2433;
+}
+
+.boundary-note h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.folio-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.8fr);
+  gap: 1.5rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.folio-next {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.folio-details {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem 0.75rem;
+  align-items: center;
+}
+
+.folio-details input,
+.folio-card textarea,
+.folio-card input[type="file"] {
+  width: 100%;
+}
+
+.folio-details input,
+.folio-card textarea {
+  border: 1px solid #9e8d91;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  color: #25171a;
+  background: #fff;
+  font: inherit;
+}
+
+.folio-details input:focus-visible,
+.folio-card textarea:focus-visible,
+.folio-card input:focus-visible,
+.folio-tools button:focus-visible {
+  outline: 0.2rem solid #8b2433;
+  outline-offset: 0.15rem;
+}
+
+.folio-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.folio-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.folio-card {
+  overflow: hidden;
+  scroll-margin-top: 1rem;
+}
+
+.folio-card__header,
+.folio-card__body {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.folio-card__header {
+  background: #fbf3f5;
+  border-bottom: 1px solid #e0d3d6;
+}
+
+.folio-card__header h2 {
+  margin: 0.25rem 0 0.8rem;
+}
+
+.folio-card__action,
+.folio-card__why {
+  margin: 0.45rem 0;
+}
+
+.folio-card label {
+  display: block;
+  margin: 1.15rem 0 0.4rem;
+  font-weight: 700;
+}
+
+.folio-card textarea {
+  min-height: 8rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.folio-support {
+  margin-top: 0.7rem;
+  padding: 0.65rem 0.8rem;
+  background: #fcfaf8;
+  border: 1px solid #e0d3d6;
+  border-radius: 0.5rem;
+}
+
+.folio-support summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.folio-image-control {
+  margin-top: 1rem;
+  padding-top: 0.2rem;
+}
+
+.folio-image-preview {
+  margin-top: 0.75rem;
+  padding: 0.8rem;
+  background: #fcfaf8;
+  border: 1px dashed #b9a8ac;
+  border-radius: 0.6rem;
+}
+
+.folio-image-preview img {
+  display: block;
+  max-width: min(100%, 38rem);
+  max-height: 28rem;
+  margin-bottom: 0.6rem;
+  object-fit: contain;
+}
+
+.field-help,
+.folio-card__status,
+.save-status {
+  color: #66585b;
+  font-size: 0.92rem;
+}
+
+.folio-print-value {
+  display: none;
+  white-space: pre-wrap;
+}
+
+.folio-card__status {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 48rem) {
+  .folio-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .folio-details {
+    grid-template-columns: 1fr;
+  }
+
+  .folio-tools .button {
+    width: 100%;
+  }
+}
+
+@media print {
+  .folio-tools,
+  .folio-support,
+  .folio-card input[type="file"],
+  .folio-card [data-remove-image] {
+    display: none !important;
+  }
+
+  .folio-dashboard > :first-child {
+    display: none;
+  }
+
+  .folio-dashboard {
+    display: block;
+    border: 0;
+    padding: 0;
+  }
+
+  .folio-details {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .folio-card {
+    break-inside: auto;
+    margin-bottom: 1rem;
+  }
+
+  .folio-card textarea {
+    display: none;
+  }
+
+  .folio-print-value {
+    display: block;
+    min-height: 3rem;
+    margin-bottom: 0.8rem;
+    padding: 0.7rem;
+    border: 1px solid #777;
+    border-radius: 0.35rem;
+    color: #25171a;
+    background: #fff;
+    overflow-wrap: anywhere;
+  }
+
+  .folio-image-preview {
+    break-inside: avoid;
+  }
+}
