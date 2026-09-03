@@ -328,6 +328,7 @@
   renderCards();
   bindCardEvents();
   updateProgress();
+  window.dispatchEvent(new Event('hashchange'));
   if (textState.updated_at) announce(`Restored work saved ${new Date(textState.updated_at).toLocaleString('en-AU')}.`);
 
   nameInput?.addEventListener('input', event => { textState.student_name = event.currentTarget.value; scheduleSave(); });
